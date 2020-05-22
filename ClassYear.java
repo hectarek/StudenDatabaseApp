@@ -1,0 +1,5 @@
+public enum ClassYear {
+    
+    FRESHMAN, SOPHOMORE, JUNIOR, SENIOR, GRADUATE, DOCTORATE;
+
+}
