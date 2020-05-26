@@ -6,7 +6,7 @@ import java.util.Map;
 public class Student {
     
     Map<Integer, String> classifications = new HashMap<Integer, String>();
-    private static double costOfCourse = 600.00;
+    private static int costOfCourse = 600;
     private static int newId = 1000;
 
     private String firstName, lastName, hometown, major, id, courses;
@@ -142,20 +142,19 @@ public class Student {
         
         System.out.println("Welcome to course enrollment! \n Please enter a course to enroll in, type 'Q' to exit enrollment");
        
-        while (1 != 0) {
+        do {
+            System.out.print("Course Name ('Q' to quit):" );
             Scanner in = new Scanner(System.in);
             String course = in.nextLine();
-            System.out.print("Course Name ('Q' to quit):" );
-            course = in.nextLine();
 
             if (!course.equals("Q")) {
-                this.courses += course + "\n"; 
+                this.courses += courses + "\n" + course; 
                 System.out.println(course + " Added.");
                 this.tuitionBalance += costOfCourse; 
             } else {
                 break;
             }  
-        }
+        } while (1 != 0);
 
         System.out.println("Enrolled in: " + courses);
         System.out.println("Tuition Balance: " + tuitionBalance);
@@ -178,14 +177,14 @@ public class Student {
     public void payTuition() {
         Scanner in = new Scanner(System.in);
         System.out.println("How much do you want to pay off tuition?");
-        double payment = in.nextDouble();
+        int payment = in.nextInt();
         tuitionBalance -= payment;
         System.out.println("Thank you for your payment of: $" + payment);
         viewBalance();
         in.close();
 
     }
-    public void payTuition(double payment) {
+    public void payTuition(int payment) {
         tuitionBalance -= payment;
         System.out.println("Thank you for your payment of: $" + payment);
         viewBalance();

@@ -9,7 +9,7 @@ public class StudentDB {
         int numberOfStudents = input.nextInt();
         Student[] students = new Student[numberOfStudents];
 
-        for (int n = 0; n< numberOfStudents; n++) {
+        for (int n = 0; n < numberOfStudents; n++) {
             students[n] = new Student();
             students[n].enrollment();
             students[n].payTuition();
